@@ -26,7 +26,6 @@ body
     &.active
         overflow: hidden
 
-
 img
     max-width: 100%
 
@@ -44,32 +43,36 @@ button
 
 .btn
     display: inline-block
-    font-size: 18px
+    font-size: 16px
     font-style: normal
     font-weight: 500
     line-height: 150%
     letter-spacing: 0.16px
-    padding: 13px 37px 11px
+    border: 1px solid black
+    padding: 10px 22px
     text-align: center
     border-radius: 30px
-    background-color: $prime
-    color: white
+    background-color: rgba(white, .2)
+    color: black
+    margin-bottom: 20px
     &:hover,
     &:active
-        opacity: .7
-        color: white
+        opacity: 1
+        color: $prime
 
+    img
+        width: 20px
+        display: inline-block
+        vertical-align: middle
+        margin-left: 20px
+        position: relative
+        left: 5px
 
-    &.loading
-        color: rgba(0, 0, 0, .2)
-        background-color: rgba(#000, .3)
-        cursor: unset
-        animation: none
-        pointer-events: none
-        box-shadow: none
-        transition: none
-        color: transparent
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: auto 80%
-        background-image: url('../img/loader.gif')
+@media screen and ( max-width: 1500px )
+    .btn
+        font-size: 14px
+        padding: 8px 22px
+        margin-bottom: 10px
+        img
+            width: 16px
+            left: 8px

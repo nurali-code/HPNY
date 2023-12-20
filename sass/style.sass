@@ -6,7 +6,7 @@ main
     position: relative
     z-index: 1
     min-height: 100vh
-    min-height: 100lvh
+    min-height: 100dvh
     display: flex
     flex-direction: column
     justify-content: flex-end
@@ -38,6 +38,8 @@ h1
     font-weight: normal
     padding: 40px
     font-size: 24px
+    @media screen and ( max-width: 1500px )
+        font-size: 20px
 
 .wrap
     display: flex
@@ -45,8 +47,7 @@ h1
     flex-wrap: wrap
     width: 100%
     justify-content: center
-    gap: 40px
-    margin-bottom: 10px
+    gap: 35px
     img
         transition: all ease .2s
         filter: grayscale(1) brightness(0)
@@ -65,12 +66,26 @@ h1
             img
                 filter: grayscale(0) brightness(1)
 
+    @media screen and ( max-width: 1500px )
+        gap: 30px
+        position: relative
+        top: 5px
+
     @media screen and ( max-width: 800px )
-        gap: 20px
-        max-width: 95%
-        margin: 0 auto 
+        gap: 13px
+        max-width: 350px
+        margin: 0 auto
+
+        img
+            max-width: 26px
+            max-height: 30px
+
+        a
+            padding: 8px 8px 8px 35px
+            font-size: 18px
 
 .content
+    text-align: center
     width: 100%
     a
         display: block
@@ -81,8 +96,8 @@ h1
         vertical-align: middle
 
 .footer
-    display: block !important
-    width: 350px !important
+    display: block
+    width: 350px
     max-width: 80% !important
     padding: 0 !important
     text-align: center
@@ -93,3 +108,9 @@ h1
         display: block
         margin: 0 auto
         max-width: 100% !important
+
+    @media screen and ( max-width: 1500px )
+        width: 250px
+
+    @media screen and ( max-width: 800px )
+        width: 220px

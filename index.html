@@ -7,16 +7,20 @@
     <title>HPNY</title>
     <meta name="theme-color" content="#762aa5" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#762aa5" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?ver=123">
 
 </head>
 
 <body>
     <main>
         <h1>BEST TOKEN OF THE NEW YEAR</h1>
-        <video muted autoplay loop poster="img/poster.jpg" class="pc" src="vid/pc.mp4" type="video/mp4"></video>
-        <video muted autoplay loop poster="img/poster_mob.jposter.jpg" class="mob" src="vid/mob.mp4" type="video/mp4"></video>
+        <video id="vidMob" muted autoplay loop poster="img/poster_mob.jpg" class="mob" src="vid/mob.mp4" type="video/mp4"></video>
+        <video id="vidPc" muted loop poster="img/poster.jpg" class="pc" src="vid/pc.mp4" type="video/mp4"></video>
         <div class="content">
+            <button class="btn">
+                1231233123113123121.....
+                <img src="img/ic-copy.svg" alt="copy">
+            </button>
             <div class="wrap">
                 <a href="#"><img src="img/eth-color.svg" alt="eth">ETHCAN</a>
                 <a href="#"><img src="img/uniswap-color.svg" alt="eth">BUY</a>
@@ -30,6 +34,18 @@
         </div>
 
     </main>
+
+    <script>
+        const vidPc = document.getElementById('vidPc');
+        const vidMob = document.getElementById('vidMob');
+        if (window.innerWidth >= 800) {
+            vidPc.setAttribute('autoplay', true)
+            vidMob.removeAttribute('autoplay', true)
+        } else {
+            vidPc.removeAttribute('autoplay', true)
+            vidMob.setAttribute('autoplay', true)
+        }
+    </script>
 
 
 </body>
