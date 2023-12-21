@@ -14,10 +14,11 @@
 <body>
     <main>
         <h1>BEST TOKEN OF THE NEW YEAR</h1>
-        <video id="vidMob" muted autoplay loop poster="img/poster_mob.jpg" class="mob" src="vid/mob.mp4" type="video/mp4"></video>
+        <video id="vidMob" playsinline muted autoplay loop poster="img/poster_mob.jpg" class="mob" src="vid/mob.mp4"
+            type="video/mp4"></video>
         <video id="vidPc" muted loop poster="img/poster.jpg" class="pc" src="vid/pc.mp4" type="video/mp4"></video>
         <div class="content">
-            <button class="btn">
+            <button class="btn" onclick="copyText()" data-copy="1231233123113123121121">
                 1231233123113123121.....
                 <img src="img/ic-copy.svg" alt="copy">
             </button>
@@ -44,6 +45,25 @@
         } else {
             vidPc.removeAttribute('autoplay', true)
             vidMob.setAttribute('autoplay', true)
+        }
+
+        function copyText() {
+            // Находим кнопку по классу
+            var button = document.querySelector('.btn');
+
+            // Получаем значение атрибута data-copy
+            var dataToCopy = button.getAttribute('data-copy');
+
+            // Используем Clipboard API для копирования текста в буфер обмена
+            navigator.clipboard.writeText(dataToCopy)
+                .then(function () {
+                    // Успешно скопировано
+                    alert('Текст скопирован: ' + dataToCopy);
+                })
+                .catch(function (err) {
+                    // Обработка ошибки, если копирование не удалось
+                    console.error('Не удалось скопировать текст: ', err);
+                });
         }
     </script>
 
